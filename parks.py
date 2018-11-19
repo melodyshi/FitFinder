@@ -34,7 +34,6 @@ def parks(url):
         category = center.xpath('.//h4')[0].text
         center_name = center.xpath('.//strong')[0].text
         address = center.xpath('.//p/text()[1]')[0]
-    
         weekdays = center.xpath('.//strong[@class="day"]')
         timeslots = center.xpath('.//span[@class="time"]')
     
@@ -54,6 +53,7 @@ def parks(url):
             }
     
             entry_list.append(entry)
+        
     return pd.DataFrame(entry_list)
 
 # main function for testing purpose
