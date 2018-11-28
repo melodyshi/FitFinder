@@ -9,6 +9,7 @@ Created on Wed Nov 14 15:33:27 2018
 import requests
 from lxml import html
 import pandas as pd
+import pickle
 
 def parks(url):
     """
@@ -62,6 +63,15 @@ def parks(url):
 
 # main function for testing purpose
 if __name__ == "__main__":
-    print(parks('https://www.nycgovparks.org/programs/recreation/shape-up-nyc?fbclid=IwAR2fu7flf3TdXJicDvHYsTDBBlI054ECUvKGhAjR6nqKj4CQbiDvURdegLk'))
-
+    df = parks('https://www.nycgovparks.org/programs/recreation/shape-up-nyc?fbclid=IwAR2fu7flf3TdXJicDvHYsTDBBlI054ECUvKGhAjR6nqKj4CQbiDvURdegLk')
+    #save the dataframe as a local file
+    with open("parks.pk","wb") as f:
+        pickle.dump(df,f)
+    
+    #load the dataframe from a local file
+    """
+    with open("parks.pk","rb") as f:
+        df = pickle.load(f)
+        print(df)
+    """
     
