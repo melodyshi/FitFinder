@@ -21,6 +21,12 @@ def get_schedule(url):
     address = doc.xpath('//div[@class="studio-address"]')[0].text
     location = doc.xpath('//div[@class="studio-address"]')[1].text
     classes = doc.xpath('//@aria-label')
+    
+    '''
+    The classes are are nested in branches with the attribute @aria-label, however there is other information
+    associated with those attributes, like sign up links, formatting details, code that closes a specific
+    time slot once it has either been filled or it has expired, and other miscellaneous . 
+    '''
 
     result = []
     
@@ -40,14 +46,20 @@ def get_schedule(url):
             results.append(c) 
         elif 'Sun' in c[0:3]:
             results.append(c)
+            
+    '''
+    By manually parsing the scraped attributes, we can isolate the class details from the other, unnecessary
+    data. 
+    '''
 
     for r in results:
         entry = {
             'location': location[-5:],
             'address': address,
-            'date' : (r[0].split(',', 1)[0]).split('th', 1)[0],
+            'day' : (r.split(',', 1)[0]).split('th', 1)[0],
+            'date': url[-6:-1],
             'time' : (r.split(',', 1)[1]).split('M', 1)[0],
-            'class' : (r.split(',', 1)[1]).split('class', 1)[0],
+            'class' : (r.split(',', 1)[1]).split('class', 1)[0][8:],
             'instructor' :  (r.split(',', 1)[1]).split('with', 1)[1],
             'url': url,
             'duration': '45 minutes'
