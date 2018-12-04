@@ -43,12 +43,14 @@ def get_schedule(url):
 
     for r in results:
         entry = {
-            'location': location,
+            'location': location[-5:],
             'address': address,
-            'date' : r.split(',', 1)[0],
+            'date' : (r[0].split(',', 1)[0]).split('th', 1)[0],
             'time' : (r.split(',', 1)[1]).split('M', 1)[0],
             'class' : (r.split(',', 1)[1]).split('class', 1)[0],
             'instructor' :  (r.split(',', 1)[1]).split('with', 1)[1],
+            'url': url,
+            'duration': '45 minutes'
         }
         result.append(entry)
     
