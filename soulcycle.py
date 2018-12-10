@@ -79,7 +79,7 @@ def concat_df(studios):
     return df      
 
 def soulcycle():
-    date_list = ['01','08','15','22','29']
+    date_list = ['08','15','22','29']
     urls_19 = ['https://www.soul-cycle.com/find-a-class/studio/30/2018-12-{}/'.format(i) for i in date_list]
     urls_bp = ['https://www.soul-cycle.com/find-a-class/studio/1034/2018-12-{}/'.format(i) for i in date_list]
     urls_c = ['https://www.soul-cycle.com/find-a-class/studio/1042/2018-12-{}/'.format(i) for i in date_list]
