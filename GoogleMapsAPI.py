@@ -83,3 +83,5 @@ def get_postal_code(address):
     except:
         postal_code = "000000"
     return postal_code
+
+get_postal_code(" ".join([str(i) for i in get_lat_lon("Murray Hill, New York")]))
