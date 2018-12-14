@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Class Finder</title>
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Acme|Cagliostro" rel="stylesheet">
+<style>
+body{
+  background-image: url("Img/atHome6.jpg")
+}
+</style>
+</head>
+
+<body>
+  <form class="form" method="post" action="classes_cgi.py">
+    <h2>Class Finder</h2>
+    <p>What classes are you looking for?</p>
+    <select name="class" required>
+      <option value="dance">Dance</option>
+      <option value="cardio">Cardio & Conditioning</option>
+      <option value="cycl">Cycling</option>
+      <option value="yoga">Yoga</option>
+      <option value="swim">Swimming</option>
+      <option value="boxing">Boxing</option>
+    </select>
+    <p>Please select days:</p>
+      <input type="checkbox" name="mon" value="Mon">Monday</br>
+      <input type="checkbox" name="tue" value="Tue">Tuesday</br>
+      <input type="checkbox" name="wed" value="Wed">Wednesday</br>
+      <input type="checkbox" name="thu" value="Thu">Thursday</br>
+      <input type="checkbox" name="fri" value="Fri">Friday</br>
+      <input type="checkbox" name="sat" value="Sat">Saturday</br>
+      <input type="checkbox" name="sun" value="Sun">Sunday</br>
+
+    <p>How many records you wish to see:</p>
+    <input type="radio" name="limit" value="5" required>5</br>
+    <input type="radio" name="limit" value="10">10</br>
+    <input type="radio" name="limit" value="20">20</br>
+    <input type="submit" value="Submit">
+  </form>
+
+
+<footer>
+  <hr/>
+  <a href="index.html"><img src="Img/goback2.png"></a>
+<!-- <div><a href="index.html"><p>Back to the home page</p></a></div> -->
+</footer>
+</body>
+</html>
