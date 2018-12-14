@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Gym Finder</title>
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Arimo|Merriweather|Noto+Serif+SC|Open+Sans|Open+Sans+Condensed:300|Roboto" rel="stylesheet">
+<style>
+body{
+  background-image:url("Img/gym2.jpg");
+}
+.form {
+  margin-left: auto;
+  margin-right: auto;
+  width:60%;
+  /* font-family: 'Cagliostro', sans-serif; */
+  /* background-color: rgba(151, 195, 252, 0.5); */
+  /* font-family: 'Merriweather', serif; */
+  /* font-family: 'Noto Serif SC', serif; */
+  /* font-family: 'Open Sans Condensed', sans-serif; */
+  /* font-family: 'Arimo', sans-serif; */
+  font-family: 'Roboto', sans-serif;
+  background-color: rgba(202,202,202,0.9);
+  color:black;
+  /* font-family: 'Open Sans', sans-serif; */
+}
+#img{
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+</style>
+</head>
+
+<body>
+  <form class="form" method="post" action="gyms_cgi.py">
+    <h2>Gym Finder</h2>
+    <p>Sort by:</p>
+    <select name="sort" required>
+      <option value="rating">Rating</option>
+      <option value="distance">Distance</option>
+    </select>
+    <p>Please enter your zip code:</p>
+    <textarea name="zip" placeholder="e.g. 10003"></textarea>
+  <p>How many records you wish to see:</p>
+  <input type="radio" name="limit" value="5" required>5</br>
+  <input type="radio" name="limit" value="10">10</br>
+  <input type="radio" name="limit" value="20">20</br>
+  <input type="submit" value="Submit">
+  </form>
+  
+</body>
+
+<footer>
+  <hr/>
+<a href="index.html"><img src="Img/goback2.png"></a>
+</footer>
+
+</html>
